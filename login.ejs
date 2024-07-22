@@ -1,0 +1,119 @@
+<%- include('partials/header') %>
+
+    <style>
+
+        :root {
+        --dark: #374151;
+        --darker: #1f2937;
+        --darkest: #111827;
+        --grey: #6b7280;
+        --pink: #ec4899;
+        --purple: #8b5cf6;
+        --light: #eee;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(41, 39, 39);
+            background-color: var(--light);
+        } 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            margin: 15vh auto;
+            padding: 15px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 0 15px var(--darker);
+            /* background-color: gray; */
+        }
+
+        h2{
+            color:var(--darkest);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+        }
+        label{
+            align-self: flex-start;
+        }
+        input {
+            width: 100%;
+            margin: 5px 0;
+            height: 35px;
+            font-size: 17px;
+            text-align: left;
+            outline: none;
+            border-radius: 8px;
+            border: none;
+            background: rgb(235, 228, 228);
+            margin-bottom: 15px;
+        }    
+        button{
+            margin: 10px auto;
+            width: 120px;
+            background: #4ad295;
+            color: var(--darkest);
+            cursor: pointer;
+            height: 35px;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            outline: none;
+            border-radius: 15px;
+            border: none;
+        }
+
+        .forget{
+            align-self: flex-end;
+        }
+
+        button:hover{
+        background: var(--grey);
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .container{
+                width: 90%;
+            }
+        }
+    </style>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <% if(typeof message !== "undefined") { %>
+
+            <p style="color:#4ad295; font-size: 20px;"> <%= message %></p>
+    
+            <% } %>
+    
+
+        
+        <form action="/login" method="POST">
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder=" enter your password" required>
+
+            <a class="forget" href="">forget password?</a>
+
+            <button type="submit">Login</button>
+
+            <p>don't have an account? <a href="signup">register here</a> </p>
+        </form>
+    </div>
+
+<%- include('partials/footer') %>

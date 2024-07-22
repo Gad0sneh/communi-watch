@@ -1,0 +1,434 @@
+<%- include('partials/header') %>
+    
+
+<header>
+        <div class="header-left">
+            <div class="logo">
+                <h2>Communi Watch</h2>
+                <!-- <img src="./logo.png" alt=""> -->
+            </div>
+            <!-- <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="">Say, hi</a>
+                    </li>
+                </ul>
+            </nav> -->
+
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </label>
+                <ul>
+                    <li>
+                        <a href="#" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="ourService">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="anonymous">anonymous</a>
+                    </li>
+                    <div class="login-signup">
+                        <a href="login">Login</a> or <a href="signup">Signup</a>
+                    </div>
+                                
+                </ul>
+                
+
+            </nav>
+        
+        </div>
+        <div class="header-right">
+            <div class="login-signup">
+                <a href="login">Login</a> or <a href="signup">Signup</a>
+            </div>
+            <box-icon class="menun" name='menu'></box-icon>
+        </div>
+    </header>
+
+    <section class="main">
+        <div class="title">
+            <!-- <h1>Communal Watch</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eligendi rem voluptas nesciunt aperiam accusantium veritatis laboriosam odit. Unde ipsa optio culpa ea quae sed in magnam error at tenetur.</p> -->
+        </div>
+    </section>    
+
+    <section class="home">
+        <img src="img/image1.jpeg" class="img-slide active">
+        <img src="img/image2.jpeg" class="img-slide ">
+        <img src="img/image3.jpeg" class="img-slide ">
+        <img src="img/image6.jpeg" class="img-slide ">
+
+    </section>
+
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .home{
+        padding: 100px 200px;
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+        /* background: rgba(0, 140, 255, 0.959); */
+    }
+
+    .home:before {
+        z-index: 777;
+        content: '';
+        position: absolute;
+        background: rgba(251, 3, 3, 0.034);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .home .content {
+        z-index: 888;
+        color: #ffff;
+        width: 70%;
+        margin-top: 50px;
+        display: none;
+    }
+
+    .home img{
+        z-index: 000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(30%);
+    }
+
+    .slider-navigation{
+        z-index: 888;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(80px);
+        margin-bottom: 12px;
+    }
+
+    .slider-navigation .nav-btn{
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+        transition: 0.3s ease;
+    }
+
+    .slider-navigation .nav-btn.active {
+        background: #09a6d4;
+    }
+
+    .slider-navigation .nav-btn:not(:last-child){
+        margin-right: 20px;
+    }
+
+    .slider-navigation .nav-btn:hover{
+        transform: scale(1.2);
+    }
+
+    /* .img-slide{
+        position: absolute;
+        width: 100%;
+        clip-path: circle(0% at 0 50%);
+    }
+ */
+    /* .img-slide.active{
+        clip-path: circle(150% at 0 50%);
+        transition: 2s ease;
+        transition-property: clip-path;
+    } */
+
+
+    /* @media only screen and (max-width: 858px) {
+    header {
+        padding: 0 20px;
+    }
+    header .header-right .menun {
+        display: block;
+        margin-left: -140px;
+    }
+    header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: #0b3926;
+        padding: 30px;
+        transition: 0.3s;
+        text-align: center;
+        z-index: -1;
+    }
+     header .header-left nav.active {
+        top: 70px;
+    }
+    header .header-left nav ul {
+        display: block;
+    }
+
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
+    }
+ */
+     /* ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+
+    }
+
+    nav ul li a{
+        font-size: 20px
+    }
+
+    header .header-left nav.active {
+        top: 70px;
+    }
+
+
+
+
+    
+}
+ */
+.header-left .logo h2{
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+}
+
+ .header-left .login-signup{
+    display: none;
+ }
+
+ header .header-left nav ul {
+        display: block;
+    }
+
+
+
+ nav{
+    /* background: #0082e6; */
+    height: 80px;
+    width: 100%;
+
+}
+
+label.logo{
+    color: #fff;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+    
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 13px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+a.active,a:hover{
+    background: #4ad295;
+    transition: .5s;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+.center-piece img {
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    
+    nav ul li a{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 858px){
+
+
+    .checkbtn{
+        display: block;
+        margin-left: 85px;
+    }
+
+    ul{
+        position: fixed;
+        width: 70%;
+        height: 30vh;
+        background:#4ad295;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 10px;
+        line-height: 20px;
+    }
+
+    nav ul li a{
+        font-size: 15px
+    }
+
+    a:hover, a.active{
+        background:none;
+        color: #0082e6;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    header .header-right .login-signup {
+        display: none;
+    } 
+
+    .home img{
+        display: none;
+    }
+
+    .header-left .login-signup{
+         display: block;
+         color: #1b9bff;
+    }
+
+    .center-piece h1 {
+        margin-top: 100px;
+        margin-left: -530px;
+        font-size: 40px;
+    }
+
+    .center-piece span h1{
+        margin-top: 160px;
+        font-size:  23px;
+        margin-left: -350px;
+    }
+
+    .center-piece img {
+        display: block;
+        margin-top: -400px;
+        width: 300px;
+        margin-left: 10px;
+   }
+
+   .center-piece p{
+    font-size: 10px;
+    margin-top: 20px;
+    margin-left: -550px;
+   }
+
+
+}
+
+
+    
+
+
+
+</style>
+
+    <div class="center-piece">
+        <h1>Revolutionising</h1>
+        <span><h1>Community Policy In Nigeria</h1></span>
+        <p>What Are You Waiting For To Save Lives and Properties Signup Right Now </p>
+        <img src="img/image3.jpeg" class="img-slide ">
+    </div>
+        
+
+    <footer>
+        <p>copyright &copy; Sweet Haven Academy 2024</p>
+    </footer>
+
+    
+    <script src="index.js"></script>
+
+<%- include('partials/footer') %>
+
+

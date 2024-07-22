@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+
+
+<div class="container">
+    <h2>Write  to us</h2>
+    
+    <form onsubmit="sendEmail(); reset(); return false;">
+        <input type="text" name="emergency" placeholder=" Type of emergency">
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        <input type="text" name="name" id="name" placeholder=" enter your name" required>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "abraham.jonathan2015@gmail.com",
+            Password : "LegendAb",
+            To : 'legenddesign0@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New Enquiry",
+            Body : "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value
+                + "<br> Message: " + document.getElementById("message").value
+        }).then(
+        message => alert("Message sent successfully")
+        );
+    }
+</script>
+
+
+<%- include('partials/footer') %>
